@@ -1,0 +1,13 @@
+#Setup parameters
+L = 20.0
+T = 5.0 * 60.0
+Delta_x = 0.2
+Delta_t = 10.0
+U = 0.1
+C = 250.0
+
+#setup domain
+x_array, t_array, N_x, N_t, Delta_x, Delta_t, = intialise_grid(L, T, Delta_x, Delta_t)
+C_current, C_next = apply_initial_condition(N_X, C, initial_index)
+
+#run forward subsitution solver 
