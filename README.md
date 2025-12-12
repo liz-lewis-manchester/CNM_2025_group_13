@@ -5,12 +5,30 @@ def constant_velocity(u0, Nx):
 
 
 def noisy_velocity(u0, Nx, noise=0.10, seed=42):
-    """10% random variation across space."""
+    """Spatially varying velocity (±10%)."""
     rng = np.random.default_rng(seed)
     return u0 * (1 + noise * rng.standard_normal(Nx))
 
 
 def time_varying_velocity(u0, Nx, step, noise=0.10):
-    """Velocity changes each timestep."""
+    """Velocity varies each timestep."""
     rng = np.random.default_rng(step)
     return u0 * (1 + noise * rng.standard_normal(Nx))
+    import numpy as np
+
+def compute_coefficients(u, dt, dx):
+    Nx = len(u)
+    A = np.ones(Nx)
+    B = -u * dt / dx
+    return A, B
+    for step in range(1, Nt):
+
+    # Variable velocity (Task 11)
+    u = time_varying_velocity(u0, Nx, step)
+
+    A, B = compute_coefficients(u, dt, dx)
+
+    C_new = forward_substitution(A, B, C_old, left_bc=C_old[0])
+
+    C_old = C_new.copy()
+    C_hist.append(C_old)
