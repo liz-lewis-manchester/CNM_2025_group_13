@@ -10,4 +10,4 @@ def forward_substitution(A, B, F): #defining a function to solve the linear syst
   for i in range (1,N_x): #Creating a loop to solve the linear system 
     theta_new[i]=(1/(A[i-1]))*(F[i-1]- B[i-1]*theta_new[i-1])
 
-  return theta_new #Setting up the return of the Θ_new from this function
+  return theta_new #Setting up the return of the theta_new from this function
