@@ -9,7 +9,7 @@ if U > 0:
   b= -U/Delta_x
 else: 
   a= (1/Delta_t) - (U/Delta_x)
-  b= -U/Delta_x 
+  b= U/Delta_x 
 
 A[:]=a
 B[:]=b
