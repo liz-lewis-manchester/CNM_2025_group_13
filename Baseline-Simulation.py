@@ -7,8 +7,8 @@ U = 0.1
 C = 250.0
 
 #Initialise domain
-x_array, t_array, N_x, N_t, Delta_x, Delta_t, = intialise_grid(L, T, Delta_x, Delta_t)
-C_current, C_next = apply_initial_condition(N_X, C, initial_index, N_t)
+x_array, t_array, N_x, N_t, Delta_x, Delta_t, = setup_domain(L, T, Delta_x, Delta_t)
+C_current, C_next = initial_conditions(N_x, C, initial_index, N_t)
 
 #run solver
 for n in range (1, N_t):
