@@ -9,7 +9,7 @@ from src.velocity import constant_velocity
 import os 
 
 def run_simulation(U,Delta_x,Delta_t,L=20.0,T=300.0,C0=250.0):
-  run simulation with gven parameters and return final state 
+  """run simulation with gven parameters and return final state""" 
   N_x = int(L/Delta_x) + 1
   N_t = int(T/Delta_t) + 1
   x_array = np.linspace(0,L,N_x)
