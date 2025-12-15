@@ -14,7 +14,7 @@ def run_simulation(U,Delta_x,Delta_t,L=20.0,T=300.0,C0=250.0):
   N_t = int(T/Delta_t) + 1
   x_array = np.linspace(0,L,N_x)
 
-  csv_data = read_intial_consitions('intial_consitions.csv')
+  csv_data = read_intial_conditions('intial_consitions.csv')
   C_current = interpolater_initial_conditions(csv_data,x_array)
 
   for n in range(1,N_t):
@@ -25,7 +25,7 @@ def run_simulation(U,Delta_x,Delta_t,L=20.0,T=300.0,C0=250.0):
     current_time = n * Delta_t
     apply_inflow_boundary(C_new,current_time,U)
     apply_outflow_boundary(C_new)
-    C_current = C_new.compy()
+    C_current = C_new.copy()
 
   return x_array,C_current 
 
