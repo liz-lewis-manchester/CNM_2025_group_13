@@ -14,7 +14,7 @@ def run_simulation(U,Delta_x,Delta_t,L=20.0,T=300.0,C0=250.0):
   N_t = int(T/Delta_t) + 1
   x_array = np.linspace(0,L,N_x)
 
-  csv_data = read_intial_conditions('intial_consitions.csv')
+  csv_data = read_initial_conditions('initial_conditions.csv')
   C_current = interpolate_initial_conditions(csv_data,x_array)
 
   for n in range(1,N_t):
@@ -106,12 +106,12 @@ plt.savefig("results/task9_temporal_sensitivity.png")
 plt.show()
 
 print("\nGenerating combined comparison plot")
-fig4,(ax4a,ax4b,ax4c) = plt.subplots(3,1,figsize=(10,12))
+fig4, (ax4a, ax4b, ax4c) = plt.subplots(3, 1, figsize=(10,12))
 
 for U in velocities:
-   x,C = run_simulation(U,Delta_x_base,Delta_t_base)
-   diff = C - np.interp(x,x_base,C_base)
-   ax4a.plot(x,diff,label=f'U={U} m/s')
+   x,C = run_simulation(U, Delta_x_base, Delta_t_base)
+   diff = C - np.interp(x, x_base, C_base)
+   ax4a.plot(x, diff, label=f'U={U} m/s')
 ax4a.set_ylabel("Concentration difference (μg/m³)")
 ax4a.set_title("Differences in Pollutant Spread: Velocity Variation")
 ax4a.grid(True)
@@ -119,12 +119,22 @@ ax4a.legend()
 
 for dx in delta_x_values:
    if dx !=Delta_x_base:
-       x,C = run_simulation(U_base,dx,Delta_t_base)
-       C_interp = np.interp(x,x_base,C_base)
-       diff = C - C_base
-       ax4c.plot(x,diff,label=f''Δt={dt} s')
+       x,C = run_simulation(U_base, dx, Delta_t_base)
+       C_interp = np.interp(x, x_base, C_base)
+       diff = C - C_interp
+       ax4b.plot(x, diff, label=f'Δx={dx} m')
+ax4b.set_ylabel("Concentration difference  (μg/m³)")
+ax4b.set_title("Differences in Pollutant Spread: Temporal Resolution")
+ax4b.grid(True)
+ax4b.legend()
+
+for dt in delta_t_values:
+    if dt != Delta_t_base:
+        x, C = run_simulation(U_base, Delta_x_base, dt)
+        diff = C - C_base
+        ax4c.plot(x, diff, label=f'Δt={dt} s')
 ax4c.set_xlabel("Distance along river (m)")
-ax4c.set_ylabel("Concentration difference  (μg/m³)")
+ax4c.set_ylabel("Concentration difference (μg/m³)")
 ax4c.set_title("Differences in Pollutant Spread: Temporal Resolution")
 ax4c.grid(True)
 ax4c.legend()
