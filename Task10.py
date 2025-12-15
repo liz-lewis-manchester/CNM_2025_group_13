@@ -141,7 +141,7 @@ fig4,(ax4a,ax4b) = plt.subplots(1,2,figsize=(14,5))
 im1 = ax4a.contourf(x_const,t_const / 60,C_const,levels=20,cmap='viridis')
 ax4a.set_xlabel("Distance(m)")
 ax4a.set_ylabel("Time(minutes)")
-ax4a.set_title(Constant Source")
+ax4a.set_title("Constant Source")
 plt.colorbar(im1,ax=ax4a,label='Concentration (μg/m³)')
 
 im2 = ax4b.contourf(x_decay, t_decay / 60, C_decay, levels=20, cmap='viridis')
