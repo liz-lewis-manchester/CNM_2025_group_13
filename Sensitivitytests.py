@@ -15,7 +15,7 @@ def run_simulation(U,Delta_x,Delta_t,L=20.0,T=300.0,C0=250.0):
   x_array = np.linspace(0,L,N_x)
 
   csv_data = read_intial_conditions('intial_consitions.csv')
-  C_current = interpolater_initial_conditions(csv_data,x_array)
+  C_current = interpolate_initial_conditions(csv_data,x_array)
 
   for n in range(1,N_t):
     u = constant_velocity(U,N_x)
@@ -67,8 +67,8 @@ delta_x_values = [0.1,0.2,0.4]
 fig2, ax2 = plt.subplots(figsize=(10,6))
 
 for dx in delta_x_values:
-   x,C = run_simulation(U_base,dx,Delta_t_base)
-   label = f'Δx={dx} m' + ('(Baseline)' if dx ==Delta_x_base else'')
+   x,C = run_simulation(U_base, dx, Delta_t_base)
+   label = f'Δx={dx} m' + ('(Baseline)' if dx ==Delta_x_base else '')
    style = 'k--' if dx ==Delta_x_base else '-'
    linewidth = 2 if dx ==Delta_x_base else 1
    ax2.plot(x,C,style,linewidth=linewidth,label=label)
@@ -76,7 +76,7 @@ for dx in delta_x_values:
 
 ax2.set_xlabel("Distance along river (m)")
 ax2.set_ylabel("Poluutant concentration (μg/m³)")
-ax2.set_title("Task 9:Spatial Resolution Sensitivity Test")
+ax2.set_title("Task 9: Spatial Resolution Sensitivity Test")
 ax2.grid(True)
 ax2.legend()
 plt.tight_layout()
@@ -118,7 +118,7 @@ ax4a.grid(True)
 ax4a.legend()
 
 for dx in delta_x_values:
-   if dx !=Delta_x_base"
+   if dx !=Delta_x_base:
        x,C = run_simulation(U_base,dx,Delta_t_base)
        C_interp = np.interp(x,x_base,C_base)
        diff = C - C_base
