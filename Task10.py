@@ -49,7 +49,7 @@ def run_simulation_with_source(decay_rate,L=20.0,T=300.0,Delta_x=0.2,Delta_t=10.
   source_history = np.zeros(N_t)
   source_history[0] = C0
 
-  for n in range(1,N_T):
+  for n in range(1,N_t):
     current_time = n * Delta_t
     u = constant_velocity(U,N_x)
     A,B = compute_coefficients(u,Delta_t,Delta_x)
