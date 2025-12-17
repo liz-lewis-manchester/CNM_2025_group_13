@@ -3,3 +3,7 @@
 Task 2: Storage of matrix
 -
 This branch focus on creating coefficients A and B for the matrix, for later use in solving the equation.
+
+How to use this section of the code: 
+- Define N_x, Delta_t, Delta_x and U
+- Type: A,B=Storing_matrix(N_x, Delta_t, Delta_x, U) 
