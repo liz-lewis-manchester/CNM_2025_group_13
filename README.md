@@ -6,4 +6,4 @@ This branch focus on creating coefficients A and B for the matrix, for later use
 
 How to use this section of the code: 
 - Define N_x, Delta_t, Delta_x and U
-- Type: A,B=Storing_matrix(N_x, Delta_t, Delta_x, U) 
+- Type: A,B=storing_matrix(N_x, Delta_t, Delta_x, U) 
