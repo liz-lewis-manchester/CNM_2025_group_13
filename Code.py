@@ -8,5 +8,6 @@ def apply_outflow_boundary(C_next: np.ndarray) -> None:
     last_index = len(C_next) - 1
     C_next[last_index] = C_next[last_index - 1]
 for t_step in range(Nt):
+    current_time = t_step * dt
     apply_inflow_boundary(C_next, current_time, U) 
     apply_outflow_boundary(C_next)
