@@ -1,3 +1,5 @@
+import numpy as np
+
 def apply_inflow_boundary(C_next: np.ndarray, current_time: float, U: float) -> None:
     """Applies the Dirichlet boundary condition at x=0."""
     SOURCE_CONCENTRATION = 250.0 # µg/m³
