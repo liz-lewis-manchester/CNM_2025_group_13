@@ -1,6 +1,6 @@
 # CNM_2025_group_13
 #Task 3
-F=(1/Delta_t)*C_current[1:] #Setting up right hand side vector F 
+#F=(1/Delta_t)*C_current[1:] #Setting up right hand side vector F 
 
 def forward_substitution(A, B, F, C_next): #defining a function to solve the linear system 
   N_x= len(F) +1 #Total grid points, as F is one shorter than C_current
