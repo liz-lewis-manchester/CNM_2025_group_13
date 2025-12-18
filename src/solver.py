@@ -11,14 +11,6 @@ Original file is located at
 This .py document contains the code for solving the equation by storing the matrix into coefficients A and B and running forward substitution.
 """
 
-#Defining parameters
-L = 20.0
-T = 5.0 * 60.0
-Delta_x = 0.2
-Delta_t = 10.0
-U = 10.0
-C0 = 250.0
-
 #Task 2: storage of matrix
 import numpy as np
 
