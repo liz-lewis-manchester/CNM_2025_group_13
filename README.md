@@ -52,17 +52,28 @@ Repository Structure
    
  - src (source of the code)
    
+       - Baseline-Simulation.py
+       - Task10_Test4 #Task 10
        - _iniy_.py   #Empty file that allows the folder to be read by colab
        - boundary.py #Task 4
-       - domain.py #Task1,5 and 9
-       - solver.py #Tasks 3 and 4
-       - run_simulation.py #Task 11
        - coefficients.py #Task 11
-       - velocity.py #Task 11
+       - domain.py #Task1,5 and 9
        - plotting.py #Task 12
+       - run_simulation.py #Task 11
+       - solver.py #Tasks 3 and 4
+       - task_9_test_sensitivity (1).py #Task 9
+       - velocity.py #Task 11
+       
  
  - results (result from the test)
- 
+        - Spatial Resolution Sensitivity Test.png #Graph from test 3
+        - Temporal Resolution Sensitivity Test.png #Graph from test 3
+        - Test 4- Constant vs Decaying Source.png #Graph from test 4
+        - Test 4-Source Concentration vs Time.png #Graph from test 4
+        - Velocity Sensitivity Test.png #Graph from test 2
+        - task7_baseline_simulation.png #Graph from test 1
+   
+       
  - README.md (instructions on how to use the codes in this respiratory)
 
 Milestones and Tasks Delegations
