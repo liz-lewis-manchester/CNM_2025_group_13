@@ -1,6 +1,6 @@
 
 =======
-# CNM_2025_group_13
+# CIVL20471 Computing & Numerical Methods (Civil) 2025/26 1st Semester - Group 13
 
 Overview
 -
@@ -23,7 +23,7 @@ The code is flexible, allowing the user to change parameters, and it will automa
 
 Repository Structure
 -
- /CNM_2025_group_13
+ CNM_2025_group_13
 
 
  - Doc (documents on task delegations)
