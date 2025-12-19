@@ -38,6 +38,7 @@ def interpolate_initial_conditions(sensor_data: pd.DataFrame, x_grid: np.ndarray
         np.ndarray: The pollutant concentration at each point in x_grid.
     """
     # Extract sensor data
+    sensor_data = pd.read_csv("initial_conditions.csv")
     x_sensor = sensor_data['Distance (m)'].to_numpy() 
     theta_sensor = sensor_data['Concentration (µg/m_ )'].to_numpy() 
     sort_indices = np.argsort(x_sensor)
