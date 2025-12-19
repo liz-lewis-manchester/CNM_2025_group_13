@@ -52,6 +52,7 @@ Repository Structure
        - boundary.py #Task 4
        - domain.py #Task1,5 and 9
        - solver.py #Tasks 3 and 4
+       - plotting.py #Task 12
 
  - README.md
 
@@ -74,8 +75,12 @@ Milestones and Tasks
 **Milestone 4:Tests**
 - Task 9: Sensitivity test (U, spatial and temporal resolution)
 - Task 10: Exponetial decay in time
-- Task 11: Variable stream velocity profile 
-  
+- Task 11: Variable stream velocity profile
+
+**Milestone 5: Visualisation and Vlidation**
+- Task 12: Plotting & Visualisation Tools
+- Task 13: Automated Tests
+
 They are futher described in the docs/ folder
 
 
@@ -99,5 +104,3 @@ Authors
 - Zina Almazloum
 - Hon Wong 
 -
-
->>>>>>> main
