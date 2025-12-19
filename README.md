@@ -1,32 +1,53 @@
-
 # CNM_2025_group_13
 
-Task 2: Storage of matrix
+Overview
 -
-This branch focus on creating coefficients A and B for the matrix, for later use in solving the equation.
+This repository contains a Python code that using numerical method it simulates the evolution of a pollutant concentration in a river. The aim is to model how pollutant concentration envolves over time and distance, by using the the advection equation: 
 
-How to use this section of the code: 
-- Define parameters: L, T, Delta_x, Delta_t, U, C0
-- Initialise domain: x_array, t_array, N_x, N_t = setup_domain(L, T, Delta_x, Delta_t) and C_current, C_next = initial_conditions(N_x, initial_value, start_index=0)
-- A,B= storing_matrix(N_x, Delta_t, Delta_x, U)
-#Setup Domain
-This part sets up the models domain
 
-# Initial Conditions
-This part of the code is responsible for defining the intial conditions for the model
 
-# Defining Variables
-This part sets the values for the variables in the model
+where:
+	θ = pollutant concentration (µg/m³)
+	t = time (s)
+	x = distance along the river (m)
+	U = velocity (ms-1)
 
-Task 3: Forward Substitution
+The code is flexible, allowing the user to change parameters, and it will automatically generate a graphical outputs for visualisation.
+
+Repository Structure
 -
-This branch focus on creating a code to solve the forward substitution. 
-How to use this section of the code:
-- Define parameters: L, T, Delta_x, Delta_t, U, C0
-- Initialise domain: x_array, t_array, N_x, N_t = setup_domain(L, T, Delta_x, Delta_t) and 
-C_current, C_next = initial_conditions(N_x, initial_value, start_index=0)
-- A,B= storing_matrix(N_x, Delta_t, Delta_x, U)
-- For n in range (1,N_t):
-  F=(1/Delta_t)*C_current[1:]
-  C_next= forward_substitution(A, B, F, C_next)
-  C_current[:]=C_next[:]
+
+
+Milestones and Tasks
+-
+- *Milestone 1:Setup*
+  -Task 1: Model domain and initialisation of grid
+  -Task 2: Splitting matrix into coefficient A and B
+  -Task 3: Forward substitution solver
+
+- *Milestone 2:Boundary Conditions*
+  -Task 4: Create boundary condition
+  -Task 5: Reading initial_conditions.csv
+  -Task 6: Interpolating initial condition with model grid
+
+- *Milestone 3:Simulations*
+-Task 7: Baseline simulation 
+-Task 8: Simulation with the initial conditions are read in from a csv file ‘initial_conditions.csv 
+
+- *Milestone 4:Tests*
+  -Task 9: Sensitivity test (U, spatial and temporal resolution)
+  -Task 10: Exponetial decay in time 
+  -Task 11: Variable stream velocity profile 
+  
+They are futher described in the docs/ folder
+
+
+How to run the Code
+-
+1- Copy the repository with !git clone https://github.com/liz-lewis-manchester/CNM_2025_group_13.git
+
+Authors
+-
+CNM_2025_group_13
+-
+
