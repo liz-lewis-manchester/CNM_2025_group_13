@@ -32,14 +32,14 @@ def interpolate_initial_conditions(sensor_data: pd.DataFrame, x_grid: np.ndarray
     """
     Interpolates sensor data onto the model's spatial grid.
     Args:
-        sensor_data: DataFrame with 'x' (distance) and 'concentration' columns.
+        sensor_data: DataFrame with 'Distance (m)' (distance) and 'Concentration (µg/m_ )' columns.
         x_grid: The 1D numpy array representing the model's grid points.
     Returns:
         np.ndarray: The pollutant concentration at each point in x_grid.
     """
     # Extract sensor data
-    x_sensor = sensor_data['x'].to_numpy() 
-    theta_sensor = sensor_data['concentration'].to_numpy() 
+    x_sensor = sensor_data['Distance (m)'].to_numpy() 
+    theta_sensor = sensor_data['Concentration (µg/m_ )'].to_numpy() 
     sort_indices = np.argsort(x_sensor)
     x_sensor_sorted = x_sensor[sort_indices]
     theta_sensor_sorted = theta_sensor[sort_indices]
