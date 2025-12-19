@@ -23,9 +23,7 @@ The code is flexible, allowing the user to change parameters, and it will automa
 
 Repository Structure
 -
- CNM_2025_group_13
-
-
+ 
  - Doc (documents on task delegations)
 
        - milestones.md  #File with the milestones and tasks
@@ -65,9 +63,9 @@ Repository Structure
  
  - results (result from the test)
  
- - README.md
+ - README.md (instructions on how to use the codes in this respiratory)
 
-Milestones and Tasks
+Milestones and Tasks Delegations
 -
 **Milestone 1:Setup**
 - Task 1: Model domain and initialisation of grid
