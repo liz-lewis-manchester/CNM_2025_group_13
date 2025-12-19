@@ -56,6 +56,9 @@ Repository Structure
        - boundary.py #Task 4
        - domain.py #Task1,5 and 9
        - solver.py #Tasks 3 and 4
+       - run_simulation.py #Task 11
+       - coefficients.py #Task 11
+       - velocity.py #Task 11
        - plotting.py #Task 12
 
  - README.md
