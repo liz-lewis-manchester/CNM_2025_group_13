@@ -7,26 +7,47 @@ U = 0.1
 C[0] = 250.0
 C_history = np.zeros((N_t, N_x))
 
+#Importing functions
+import numpy as np
+
+import os
+!rm -rf CNM_2025_group13
+!git clong https://github.com/liz-lewis-manchester/CNM_2025_group_13.git
+if not os.path.exists('/content/CNM_2025_group_13'):
+  !git clone https://github.com/liz-lewis-manchester/CNM_2025_group_13.git
+
+import sys
+sys.path.append('/content/CNM_2025_group_13')
+
+from src.solver import storing_matrix, forward_substitution
+from src.domain import setup_domain, initial_conditions
+from src.boundary import apply_outflow_boundary
+
 #Initialise domain
 x_array, t_array, N_x, N_t, Delta_x, Delta_t, = setup_domain(L, T, Delta_x, Delta_t)
 C_current, C_next = initial_conditions(N_x, C, initial_index, N_t)
 
-#run solver
+#Running functions to set up grid
+x_array, t_array, N_x, N_t = setup_domain(L, T, Delta_x, Delta_t)
+C_current, C_next = initial_conditions(N_x, C0, start_index=0)
+
+#Running function to compute coefficients A and B
+A, B = storing_matrix(N_x, Delta_t, Delta_x, U)
+
+#Creating a placeholder to store all the C values computed in the forward substitution
+C_history = np.zeros((N_t, N_x))
+C_history[0, :] = C_current
+
+#Writing a loop to run the code and solve using forward substitution
 for n in range (1, N_t):
-  C_next = forward_substitution(C_current, Delta_x, Delta_t, U)
+  F = (1 / Delta_t) * C_current[1:]
+  C_next[:] = 0.0
+  C_next[0] = C0
+  C_next = forward_substitution(A, B, F, C_next)
+  C_current[:] = C_next[:]
   C_current = C_next.copy()
-  C_history[n, :] = C_current[:]
-  #add conditions from task 4
-  def apply_inflow_boundary(C_next: np.ndarray, current_time: float, U: float) -> None:
-     SOURCE_CONCENTRATION = 250.0 # µg/m³
-    if current_time >= 0:
-        C_next[0] = SOURCE_CONCENTRATION
-  def apply_outflow_boundary(C_next: np.ndarray) -> None:
-    last_index = len(C_next) - 1
-    C_next[last_index] = C_next[last_index - 1]
-  for t_step in range(Nt):
-    apply_inflow_boundary(C_next, current_time, U) 
-    apply_outflow_boundary(C_next)
+  C_history[n, :] = C_current
+  apply_outflow_boundary(C_next)
 
 #save results
 RESULTS_FOLDER = "Results"
@@ -45,6 +66,19 @@ plt.ylabel("Pollutant cpncentration (µg/m^3)")
 
 for i, n in enumerate(time_plots):
   plt.plot(x_array, C_history[n, :])
+
+#saving graph
+import os
+RESULTS_FOLDER = "Results"
+os.makedirs(RESULTS_FOLDER, exist_ok=True)
+plt.savefig(
+  os.path.join(RESULTS_FOLDER, "task7_baseline_simulation.png"),
+  dpi=300
+  bbox_inches="tight"
+)
+plt.show()
+
+Print('Every line represents a different time')
 
 
 
