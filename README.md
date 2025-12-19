@@ -38,7 +38,6 @@ Repository Structure
 
  - Tests/
    
-       - TestBoundary.py
        - TestDomain.py
        - TestSolver.py
        - test_interpolation.py
