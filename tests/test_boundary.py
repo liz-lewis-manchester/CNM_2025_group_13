@@ -10,3 +10,4 @@ def test_right_boundary():
     C = np.array([1,2,3,4,5], float)
     out = apply_right_boundary(C)
     assert out[-1] == out[-2]
+mv tests/*.py Tests/
