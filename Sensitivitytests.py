@@ -44,7 +44,7 @@ x_base,C_base = run_simulation(U_base,Delta_x_base,Delta_t_base)
 print("\nRunning velocity sensitivity tests")
 velocities = [0.05,0.1,0.2]
 fig1,ax1 = plt.subplots(figsize=(10,6))
-ax1.plot(x_base,C_base,'K--",linewidth=2,label = f'Baseline U={U_base} m/s')
+ax1.plot(x_base,C_base,'K--',linewidth=2,label = f'Baseline U={U_base} m/s')
 
 for U in velocities:
   if U!=U_base:
