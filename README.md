@@ -41,6 +41,11 @@ Repository Structure
        - TestBoundary.py
        - TestDomain.py
        - TestSolver.py
+       - test_interpolation.py
+       - test_solver.py
+       - test_boundary.py
+       - test_plotting.py
+       - test_full_run.py
       
  - data/
    
@@ -52,6 +57,7 @@ Repository Structure
        - boundary.py #Task 4
        - domain.py #Task1,5 and 9
        - solver.py #Tasks 3 and 4
+       - plotting.py #Task 12
 
  - README.md
 
@@ -75,6 +81,10 @@ Milestones and Tasks
 - Task 9: Sensitivity test (U, spatial and temporal resolution)
 - Task 10: Exponetial decay in time
 - Task 11: Variable stream velocity profile 
+
+**Milestone 5:Visualiation and validation**
+- Task 12: Plotting & Visualisation Tools
+- Task 13: Automated Tests
   
 They are futher described in the docs/ folder
 
