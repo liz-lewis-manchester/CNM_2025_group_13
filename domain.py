@@ -11,7 +11,7 @@ def setup_domain(L, T, Delta_x, Delta_t):
 def initial_conditions(N_x, C0, start_index=0):
   C_current = np.zeros(N_x)
   C_next = C_current.copy()
-  C_current[start_index]=C0
+  C_current[start_index] = C0
 
   return C_current, C_next
 
@@ -22,5 +22,7 @@ Delta_t = 10.0
 U = 10.0
 C0 = 250.0
 x_array, t_array, N_x, N_t = setup_domain(L, T, Delta_x, Delta_t)
+C_history = np.zeros((N_t, N_x))
 C_current, C_next = intial_conditions(N_x, C0, start_index=0)
+C_history[0, :] = C_current[:]
 
