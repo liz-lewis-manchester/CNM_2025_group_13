@@ -41,6 +41,11 @@ Repository Structure
        - TestBoundary.py
        - TestDomain.py
        - TestSolver.py
+       - test_boundry.py
+       - test_full_run.py
+       - test_interpolation.py
+       - test_solver.py
+       - test_velocity.py
       
  - data/
    
