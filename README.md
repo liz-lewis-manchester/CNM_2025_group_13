@@ -26,11 +26,11 @@ Repository Structure
  /CNM_2025_group_13
 
 
- - Doc/
+ - Doc (documents on task delegations)
 
        - milestones.md  #File with the milestones and tasks
 
- - Notebooks/ #Notebooks where the code was ran to check if it worked
+ - Notebooks (Quality check on the code)
    
        - Copy_of_Test_Task1_Domain.ipynb
        - Task_7_Test_1_BaselineSimulation(1).ipynb
@@ -38,7 +38,7 @@ Repository Structure
        - Test_Task3_ForwardSubstitution.ipynb
        - Test_Task5and6.ipynb
 
- - Tests/
+ - Tests
    
        - TestDomain.py
        - TestSolver.py
@@ -48,11 +48,11 @@ Repository Structure
        - test_plotting.py
        - test_full_run.py
       
- - data/
+ - data (given initial conditions from the coursework)
    
        - initial_conditions.csv #File from initial condition
    
- - src/
+ - src (source of the code)
    
        - _iniy_.py   #Empty file that allows the folder to be read by colab
        - boundary.py #Task 4
@@ -62,7 +62,9 @@ Repository Structure
        - coefficients.py #Task 11
        - velocity.py #Task 11
        - plotting.py #Task 12
-
+ 
+ - results (result from the test)
+ 
  - README.md
 
 Milestones and Tasks
