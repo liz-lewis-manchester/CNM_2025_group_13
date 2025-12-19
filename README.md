@@ -81,7 +81,7 @@ Milestones and Tasks
 - Task 10: Exponetial decay in time
 - Task 11: Variable stream velocity profile 
 
-**Milestone 5:Visualiation and validation**
+**Milestone 5:Visualisation and validation**
 - Task 12: Plotting & Visualisation Tools
 - Task 13: Automated Tests
   
