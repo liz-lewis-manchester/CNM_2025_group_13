@@ -3,7 +3,7 @@
 
 This document gives the milestones and tasks used to complete the *Coursework: Modelling Pollutant Transport in a River*.
 
-*Milestone 1:...*
+*Milestone 1:Setup*
 -
 - Goal: Set up domain and variables 
 - Task 1: Model domain and initialisation of grid
@@ -13,7 +13,7 @@ This document gives the milestones and tasks used to complete the *Coursework: M
 - Person Responsible for checking: Zina Almazloum
 
 
-*Milestone 2:...*
+*Milestone 2:Boundary Conditions*
 - 
 - Goal: Handle data for testing
 - Task 4: Create boundary condition
@@ -30,7 +30,7 @@ This document gives the milestones and tasks used to complete the *Coursework: M
 - Deliverables: Results folder with plots from Task 7 and Task 8
 - Person responsible for checking: Kataryna Santana
 
-*Milestone 4:...*
+*Milestone 4:Tests*
 -
 - Goal: Check accuracy and the realism of this model
 - Task 9: Sensitivity test (U, spatial and temporal resolution), (Test case 3 from Coursework Brief)
@@ -39,13 +39,13 @@ This document gives the milestones and tasks used to complete the *Coursework: M
 - Deliverables: Results folder with plots from Task 9, Task 10 and Task 11
 - Person responsible for checking: Muhammad Ramlee
 
-*Milestone 5:...*
+*Milestone 5:Visualisation and Validation*
 -
 - Goal: Check testing, documentation, and visualisation to finalise the coursework
 - Task 12: Visualisation tools
 - Task 13: Automated tests
 - Deliverables: Visualisation tools saved into 'Results' folder; finalise Readme file and check if everythig works properly and it done.
-- Person responsible for checking:
+- Person responsible for checking: Alex Wong 
 
 
 
