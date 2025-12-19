@@ -16,7 +16,7 @@ Delta_t = 10.0
 U = 0.1 #River flow velocity 
 C0 = 250.0 #Pollutant concentration at the inlet 
 
-N_x = int(l / Delta_x) + 1
+N_x = int(L / Delta_x) + 1
 N_t = int(T / Delta_t) +1 
 x_array = np.linspace(0, L, N_x) #Creating an array for x-coordinates 
 t_array = np.linspace(0, T, N_t) #Creating an array for time points 
